@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        button { padding: 10px 20px; }
+        #keys { margin-top: 20px; }
+        .footer { margin-top: 50px; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <h1>Key Generator</h1>
+    <button onclick="generateKeys()">Generate Keys</button>
+    <div id="keys"></div>
+    
+    <div class="footer">
+        <p>Follow us on Telegram: <a href="https://t.me/yourchannel" target="_blank">@yourchannel</a></p>
+    </div>
+
+    <script>
+        function generateKeys() {
+            const numberOfKeys = 5;
+            const keys = [];
+            for (let i = 0; i < numberOfKeys; i++) {
+                keys.push(Math.random().toString(36).substring(2, 15));
+            }
+            document.getElementById('keys').innerHTML = keys.join('<br>');
+        }
+    </script>
+</body>
+</html>
